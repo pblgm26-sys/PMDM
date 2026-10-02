@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RecursosPablo</string>
-    <string name="Nombre_Completo" translatable="false">Pablo Gutiérrez Moreno</string>
     <string name="Continuar">Continuar</string>
     <string name="Cancelar">Cancelar</string>
 </resources>
