@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.RecursosPablo" parent="Base.Theme.RecursosPablo" />
+    <style name="Botones" >
+        <item name="android:minHeight">56dp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>
