@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="franja1">#65F527</color>
+    <color name="franja2">#27DDF5</color>
+    <color name="franja3">#F53527</color>
+    <color name="bloquea">#BB27F5</color>
+    <color name="bloqueb">#F5F527</color>
+    <color name="cuadrado">#009688</color>
+    <color name="boton_fondo">#1A1A1A</color>
+    <color name="boton_texto">#FFFFFF</color>
+    <color name="pantalla">#B0BEC5</color>
+    <color name="teclado">#78909C</color>
 </resources>
