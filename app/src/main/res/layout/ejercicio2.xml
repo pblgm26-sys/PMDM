@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/cuadrado"
+        android:layout_gravity="top|start" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/bloqueb"
+        android:layout_gravity="top|center_horizontal" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/black"
+        android:layout_gravity="top|end" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/bloquea"
+        android:layout_gravity="center_vertical|start" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/bloqueb"
+        android:layout_gravity="center_vertical|center_horizontal" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/pantalla"
+        android:layout_gravity="center_vertical|end" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/cuadrado"
+        android:layout_gravity="bottom|start" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/teclado"
+        android:layout_gravity="bottom|center_horizontal" />
+
+    <View android:layout_width="80dp" android:layout_height="80dp"
+        android:background="@color/boton_fondo"
+        android:layout_gravity="bottom|end" />
+</FrameLayout>
