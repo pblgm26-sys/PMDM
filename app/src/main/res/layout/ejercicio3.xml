@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teclado">
+
+    <!-- Pantalla -->
+    <TextView
+        android:id="@+id/pantalla"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@color/pantalla"
+        android:gravity="center"
+        android:text="@string/mi_nombre"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FILA 1: 7 8 9 x -->
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="7"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/pantalla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn8" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="8"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn7"
+        app:layout_constraintEnd_toStartOf="@id/btn9" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="9"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn8"
+        app:layout_constraintEnd_toStartOf="@id/btnPor" />
+
+    <Button
+        android:id="@+id/btnPor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="x"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn7"
+        app:layout_constraintStart_toEndOf="@+id/btn9"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FILA 2: 4 5 6 - -->
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="4"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/btn7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="5"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn4"
+        app:layout_constraintStart_toEndOf="@+id/btn4"
+        app:layout_constraintEnd_toStartOf="@+id/btn6" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="6"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn4"
+        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintEnd_toStartOf="@+id/btnMenos" />
+
+    <Button
+        android:id="@+id/btnMenos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="-"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn4"
+        app:layout_constraintStart_toEndOf="@+id/btn6"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FILA 3: 1 2 3 + -->
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="1"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="2"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn1"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintEnd_toStartOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="3"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn1"
+        app:layout_constraintStart_toEndOf="@+id/btn2"
+        app:layout_constraintEnd_toStartOf="@+id/btnMas" />
+
+    <Button
+        android:id="@+id/btnMas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="+"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btn1"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FILA 4: , 0 = (el = pesa 2 y mide la mitad de alto) -->
+    <Button
+        android:id="@+id/btnComa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text=","
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn0" />
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="0"
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toTopOf="@+id/btnComa"
+        app:layout_constraintStart_toEndOf="@+id/btnComa"
+        app:layout_constraintEnd_toStartOf="@+id/btnIgual" />
+
+    <Button
+        android:id="@+id/btnIgual"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/boton_redondo"
+        app:backgroundTint="@null"
+        android:text="="
+        android:textColor="@color/boton_texto"
+        app:layout_constraintDimensionRatio="H,2:1"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintTop_toTopOf="@+id/btnComa"
+        app:layout_constraintStart_toEndOf="@+id/btn0"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
