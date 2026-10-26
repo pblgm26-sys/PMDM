@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
             String correo = etCorreo.getText().toString().trim();
             String clave = etClave.getText().toString();
 
+            if (correo.isEmpty()) {
+                etCorreo.setError(getString(R.string.falta_correo));
+                return;
+            }
+            if (clave.isEmpty()) {
+                etClave.setError(getString(R.string.falta_clave));
+                return;
+            }
             if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
                 if (swRecordar.isChecked()) {
                     tvMensaje.setText(R.string.acceso_recordado);
