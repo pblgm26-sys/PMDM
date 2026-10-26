@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rvLista = findViewById(R.id.rvLista);
         rvLista.setLayoutManager(new LinearLayoutManager(this));
+        rvLista.addItemDecoration(
+                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rvLista.setAdapter(new AdaptadorVideojuegos(videojuegos));
     }
 }
