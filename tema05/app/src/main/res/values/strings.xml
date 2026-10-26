@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginPablo</string>
+    <string name="etiqueta_correo">Correo electrónico</string>
+    <string name="etiqueta_clave">Contraseña</string>
+    <string name="hint_correo">Escribe tu correo</string>
+    <string name="hint_clave">Escribe tu contraseña</string>
+    <string name="recordar">Recordar contraseña</string>
+    <string name="continuar">Continuar</string>
+</resources>
