@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LoginPablo</string>
+    <string name="etiqueta_correo">Correo electrónico</string>
+    <string name="etiqueta_clave">Contraseña</string>
+    <string name="hint_correo">Escribe tu correo</string>
+    <string name="hint_clave">Escribe tu contraseña</string>
+    <string name="recordar">Recordar contraseña</string>
+    <string name="continuar">Continuar</string>
+    <string name="acceso_correcto">Usuario y contraseña correctos</string>
+    <string name="acceso_recordado">Usuario y contraseña correctos y guardados para siguientes accesos</string>
+    <string name="acceso_incorrecto">Usuario y/o contraseña incorrectos</string>
+    <string name="falta_correo">Escribe tu correo</string>
+    <string name="falta_clave">Escribe la contraseña</string>
+    <string name="demasiados_intentos">Demasiados intentos</string>
+</resources>
