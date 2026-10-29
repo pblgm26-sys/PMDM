@@ -12,4 +12,7 @@
     <string name="falta_correo">Escribe tu correo</string>
     <string name="falta_clave">Escribe la contraseña</string>
     <string name="demasiados_intentos">Demasiados intentos</string>
+    <string name="menu_titulo">Menú principal</string>
+    <string name="menu_saludo">Hola, %1$s</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
 </resources>
