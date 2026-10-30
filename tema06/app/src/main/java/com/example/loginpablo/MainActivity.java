@@ -1,5 +1,6 @@
 package com.example.loginpablo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,13 +52,11 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-                if (swRecordar.isChecked()) {
-                    tvMensaje.setText(R.string.acceso_recordado);
-                } else {
-                    tvMensaje.setText(R.string.acceso_correcto);
-                }
-                tvMensaje.setTextColor(ContextCompat.getColor(this, R.color.correcto));
                 intentos = 0;
+                Intent intent = new Intent(this, MenuActivity.class);
+                intent.putExtra(MenuActivity.EXTRA_CORREO, correo);
+                startActivity(intent);
+                finish();
             } else {
                 intentos++;
                 if (intentos >= 3) {
