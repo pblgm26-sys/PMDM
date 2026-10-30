@@ -1,6 +1,7 @@
 package com.example.loginpablo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String CORREO_VALIDO = "pablo@correo.com";
     private static final String CLAVE_VALIDA = "1234";
     private int intentos = 0;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
         Button btnContinuar = findViewById(R.id.btnContinuar);
         TextView tvMensaje = findViewById(R.id.tvMensaje);
 
+        prefs = getSharedPreferences("sesion", MODE_PRIVATE);
+        String guardado = prefs.getString("correo", "");
+        if (!guardado.isEmpty()) {
+            etCorreo.setText(guardado);
+            swRecordar.setChecked(true);
+            etClave.requestFocus();
+        }
+
         btnContinuar.setOnClickListener(v -> {
             String correo = etCorreo.getText().toString().trim();
             String clave = etClave.getText().toString();
@@ -53,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
             }
             if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
                 intentos = 0;
+
+                SharedPreferences.Editor editor = prefs.edit();
+                if (swRecordar.isChecked()) {
+                    editor.putString("correo", correo);
+                } else {
+                    editor.remove("correo");
+                }
+                editor.commit();
+
                 Intent intent = new Intent(this, MenuActivity.class);
                 intent.putExtra(MenuActivity.EXTRA_CORREO, correo);
                 startActivity(intent);
