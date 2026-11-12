@@ -117,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
                 arrastrando = false;
             }
         });
-
-        handler.post(actualizador);
     }
 
     private String formatear(long ms) {
@@ -126,5 +124,26 @@ public class MainActivity extends AppCompatActivity {
         long minutos = totalSegundos / 60;
         long segundos = totalSegundos % 60;
         return String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        handler.removeCallbacks(actualizador);
+        handler.post(actualizador); // la barra vuelve a actualizarse
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.pause();                        // la música se pausa
+        handler.removeCallbacks(actualizador); // la barra deja de actualizarse
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(actualizador);
+        player.release(); // se libera el reproductor
     }
 }
