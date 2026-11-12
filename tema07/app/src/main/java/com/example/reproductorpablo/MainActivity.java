@@ -35,6 +35,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Player;
 import androidx.media3.exoplayer.ExoPlayer;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 
 import java.util.Locale;
 
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView tvActual, tvTotal;
     private boolean arrastrando = false;
+    private SoundPool soundPool;
+    private final int[] idSonidos = new int[4];
+    private Button[] botonesEfecto;
+    private int sonidosCargados = 0;
 
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final Runnable actualizador = new Runnable() {
@@ -99,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             @Override
             public void onProgressChanged(SeekBar sb, int progreso, boolean delUsuario) {
                 if (delUsuario) {
@@ -117,6 +124,48 @@ public class MainActivity extends AppCompatActivity {
                 arrastrando = false;
             }
         });
+        iniciarSoundPool();
+    }
+    private void iniciarSoundPool() {
+        botonesEfecto = new Button[]{
+                findViewById(R.id.btnEfecto1),
+                findViewById(R.id.btnEfecto2),
+                findViewById(R.id.btnEfecto3),
+                findViewById(R.id.btnEfecto4)
+        };
+
+        AudioAttributes atributos = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(4)
+                .setAudioAttributes(atributos)
+                .build();
+
+        // Activa los botones cuando los 4 sonidos estén cargados
+        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
+            if (status == 0) {
+                sonidosCargados++;
+                if (sonidosCargados == 4) {
+                    for (Button b : botonesEfecto) {
+                        b.setEnabled(true);
+                    }
+                }
+            }
+        });
+
+        idSonidos[0] = soundPool.load(this, R.raw.sonido1, 1);
+        idSonidos[1] = soundPool.load(this, R.raw.sonido2, 1);
+        idSonidos[2] = soundPool.load(this, R.raw.sonido3, 1);
+        idSonidos[3] = soundPool.load(this, R.raw.sonido4, 1);
+
+        for (int i = 0; i < 4; i++) {
+            final int indice = i;
+            botonesEfecto[i].setOnClickListener(v ->
+                    soundPool.play(idSonidos[indice], 1f, 1f, 1, 0, 1f));
+        }
     }
 
     private String formatear(long ms) {
@@ -130,20 +179,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         handler.removeCallbacks(actualizador);
-        handler.post(actualizador); // la barra vuelve a actualizarse
+        handler.post(actualizador);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        player.pause();                        // la música se pausa
-        handler.removeCallbacks(actualizador); // la barra deja de actualizarse
+        player.pause();
+        handler.removeCallbacks(actualizador);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacks(actualizador);
-        player.release(); // se libera el reproductor
+        player.release();
+        soundPool.release();
     }
 }

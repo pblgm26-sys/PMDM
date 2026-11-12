@@ -5,8 +5,8 @@
     <string name="boton_play">Play</string>
     <string name="boton_pausa">Pausa</string>
     <string name="titulo_efectos">Efectos de sonido</string>
-    <string name="efecto_1">Aplauso</string>
-    <string name="efecto_2">Campana</string>
-    <string name="efecto_3">Láser</string>
-    <string name="efecto_4">Moneda</string>
+    <string name="efecto_1">sonido1</string>
+    <string name="efecto_2">sonido2</string>
+    <string name="efecto_3">sonido3</string>
+    <string name="efecto_4">sonido4</string>
 </resources>
